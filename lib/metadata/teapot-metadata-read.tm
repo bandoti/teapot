@@ -1,10 +1,13 @@
+# Copyright (c) 2018 ActiveState Software Inc.
+# Released under the BSD-3 license. See LICENSE file for details.
+#
 # -- Tcl Module
 
 # @@ Meta Begin
 # Package teapot::metadata::read 0.1
 # Meta platform    tcl
 # Meta require     fileutil
-# Meta require     fileutil::magic::mimetype
+# Meta require     fileutil::magic::filetype
 # Meta require     logger
 # Meta require     teapot::entity
 # Meta require     teapot::metadata::container
@@ -28,14 +31,11 @@
 # Otherwise the meta data is stored in the zip comment, in the
 # external form.
 
-# Copyright (c) 2017 ActiveState Software Inc.
-# Released under the BSD-3 license. See LICENSE file for details.
-
 # ### ### ### ######### ######### #########
 ## Requirements
 
 package require fileutil                    ; # Directory traversal
-package require fileutil::magic::mimetype   ; # Detect zip archive
+package require fileutil::magic::filetype   ; # Detect zip archive
 package require logger                     ; # Tracing
 package require teapot::metadata::container ; # Container for read meta data
 package require teapot::reference           ; # Reference validation.
@@ -127,7 +127,7 @@ proc ::teapot::metadata::read::locationTM {path} {
 proc ::teapot::metadata::read::ExtractFromArchive {path atv ev} {
     upvar 1 $atv archivetype $ev errors
 
-    set mtypes [fileutil::magic::mimetype $path]
+    set mtypes [fileutil::magic::filetype $path]
 
     if {[lsearch -exact $mtypes  "application/zip"] >= 0} {
 	set archivetype zip
