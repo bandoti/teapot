@@ -61,11 +61,8 @@ foreach d $auto_path {
     }
 }
 
-# Load compiler (for -compile feature), suppress license check via magic
-set ::tdk_feature no-license
+# Load compiler (for -compile feature)
 package require compiler
-compiler::tdk_license user-name
-unset ::tdk_feature
 
 # ### ######### ###########################
 
