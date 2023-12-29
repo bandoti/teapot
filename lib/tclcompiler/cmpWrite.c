@@ -5,10 +5,10 @@
  *  files. It implements the "compile" command in the "Compiler" package.
  *
  * Copyright (c) 1998 by Scriptics Corporation.
- * Copyright (c) 2010, 2017 ActiveState Software Inc.
+ * Copyright (c) 2010 ActiveSTate Software Inc.
  *
- * See the file "license.terms" for information on usage and redistribution
- * of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+ *  Copyright (c) 2018 ActiveState Software Inc.
+ *  Released under the BSD-3 license. See LICENSE file for details.
  *
  * RCS: @(#) $Id: cmpWrite.c,v 1.7 2005/03/19 00:44:00 hobbs Exp $
  */
@@ -3019,7 +3019,12 @@ CompileOneProcBody(interp, infoPtr, ctxPtr, compEnvPtr)
          */
 
         localPtr = (CompiledLocal *) ckalloc((unsigned)
-                (sizeof(CompiledLocal) - sizeof(localPtr->name)
+                (sizeof(CompiledLocal)
+                
+#if defined(TCLFLEXARRAY) && (TCLFLEXARRAY + 0) > 0
+                - sizeof(localPtr->name)
+#endif
+
                         + nameLength+1));
         if (procPtr->firstLocalPtr == NULL) {
             procPtr->firstLocalPtr = procPtr->lastLocalPtr = localPtr;

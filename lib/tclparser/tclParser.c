@@ -1,9 +1,3 @@
-/*
- * :: ActiveState patch :: Retrieval and verification of ASPN/Tcl license.
- */
-
-#include "tp_license.c"
-
 /* 
  * tclParser.c --
  *
@@ -12,10 +6,10 @@
  *
  * Copyright (c) 1996 by Sun Microsystems, Inc.
  * Copyright (c) 2000 Ajuba Solutions
- * Copyright (c) 2007, 2017 ActiveState Software Inc.
+ * Copyright (c) 2007 ActiveState Software Inc.
  *
- * See the file "license.terms" for information on usage and redistribution
- * of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+ *  Copyright (c) 2018 ActiveState Software Inc.
+ *  Released under the BSD-3 license. See LICENSE file for details.
  *
  * RCS: @(#) $Id: tclParser.c,v 1.6 2001/10/17 18:07:41 andreas_kupries Exp $
  */
@@ -114,19 +108,7 @@ Tclparser_Init(interp)
 	return TCL_ERROR;
     }
 
-    /*
-     * :: ActiveState patch :: Retrieval and verification of ASPN/Tcl license.
-     */
-    {
-      int res = tp_check_license (interp);
-      if (res != TCL_OK) {
-	return res;
-      }
-    }
-
     Tcl_CreateObjCommand(interp, "parse", ParseObjCmd, NULL, NULL);
-
-    Tcl_CreateObjCommand(interp, "tdk_license", TdkLicenseObjCmd, NULL, NULL);
 
     return Tcl_PkgProvide(interp, packageName, packageVersion);
 }

@@ -1,3 +1,6 @@
+# Copyright (c) 2018 ActiveState Software Inc.
+# Released under the BSD-3 license. See LICENSE file for details.
+#
 
 # This script tests the new jump rewrite code added to fix bug 87738.
 # Without the rewrite, compiler will emit code where the proc calls
@@ -5,7 +8,6 @@
 # instruction for the 'if' segment is not updated and thus pointing to
 # the wrong instruction, or into the middle of one, with subsequent
 # crash.
-# Copyright (c) 2000, 2017 ActiveState Software Inc.
 
 package require compiler
 

@@ -2,12 +2,6 @@
 #include "cmpInt.h"
 #include "cmpWrite.h"
 
-/*
- * :: ActiveState patch :: Retrieval and verification of ASPN/Tcl license.
- */
-
-#include "tp_license.c"
-
 /* 
  * cmpWPkg.c --
  *
@@ -15,10 +9,9 @@
  *  Compiler package: the Tclcompiler_Init function.
  *
  * Copyright (c) 1998-2000 by Ajuba Solutions.
- * Copyright (c) 2017 ActiveState Software Inc.
  *
- * See the file "license.terms" for information on usage and redistribution
- * of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+ * Copyright (c) 2018 ActiveState Software Inc.
+ * Released under the BSD-3 license. See LICENSE file for details.
  *
  * RCS: @(#) $Id: cmpWPkg.c,v 1.6 2005/03/18 23:42:12 hobbs Exp $
  */
@@ -75,8 +68,6 @@ static CONST CmdTable commands[] =
     { "compile",		Compiler_CompileObjCmd,			1 },
     { "getBytecodeExtension",	Compiler_GetBytecodeExtensionObjCmd,	1 },
     { "getTclVer",              Compiler_GetTclVerObjCmd,		1 },
-
-    { "tdk_license",     TdkLicenseObjCmd, 1 },
     { 0, 0, 0 }
 };
 
@@ -137,17 +128,6 @@ Tclcompiler_Init(interp)
 	Tcl_DecrRefCount (objv[0]);
     }
 #endif
-
-    /*
-     * :: ActiveState patch :: Retrieval and verification of ASPN/Tcl license.
-     */
-
-    {
-        int res = tp_check_license (interp);
-	if (res != TCL_OK) {
-	    return res;
-	}
-    }
 
     CompilerInit(interp);
 

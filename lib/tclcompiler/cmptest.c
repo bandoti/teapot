@@ -4,12 +4,10 @@
  *  The compiler test executable initialization routine and other support
  *  stuff.
  *  This file provides the init routine for "cmptest" (the test executable).
+ *  Copyright (c) 2018 ActiveState Software Inc.
+ *  Released under the BSD-3 license. See LICENSE file for details.
  *
  * Copyright (c) 1998 by Scriptics Corporation.
- * Copyright (c) 2017 ActiveState Software Inc.
- *
- * See the file "license.terms" for information on usage and redistribution
- * of this file, and for a DISCLAIMER OF ALL WARRANTIES.
  *
  * RCS: @(#) $Id: cmptest.c,v 1.2 2000/10/31 23:30:56 welch Exp $
  */

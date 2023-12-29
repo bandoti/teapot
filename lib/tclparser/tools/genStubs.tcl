@@ -1,3 +1,6 @@
+# Copyright (c) 2018 ActiveState Software Inc.
+# Released under the BSD-3 license. See LICENSE file for details.
+#
 # genStubs.tcl --
 #
 #	This script generates a set of stub files for a given
@@ -5,9 +8,8 @@
 #	
 #
 # Copyright (c) 1998-1999 by Scriptics Corporation.
-# Copyright (c) 2017 ActiveState Software Inc.
-# See the file "license.terms" for information on usage and redistribution
-# of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+
+
 # 
 # RCS: @(#) $Id: genStubs.tcl,v 1.1 2002/10/04 17:14:06 andreas_kupries Exp $
 

@@ -1,3 +1,6 @@
+# Copyright (c) 2018 ActiveState Software Inc.
+# Released under the BSD-3 license. See LICENSE file for details.
+#
 # all.tcl --
 #
 # This file contains a top-level script to run all of the Tcl
@@ -5,7 +8,6 @@
 # in this directory.
 #
 # Copyright (c) 1998-2000 Ajuba Solutions
-# Copyright (c) 2000, 2017 ActiveState Software Inc.
 # All rights reserved.
 # 
 # RCS: @(#) $Id: all.tcl,v 1.4 2005/03/18 01:23:31 hobbs Exp $
