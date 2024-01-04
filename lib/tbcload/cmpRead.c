@@ -2900,9 +2900,12 @@ ExtractCompiledLocal(interp, envPtr)
     }
     envPtr->curImagePtr = curImagePtr;
 
-    localPtr = (CompiledLocal *) ckalloc(sizeof(CompiledLocal)
+    localPtr = (CompiledLocal *) ckalloc((unsigned)
+        sizeof(CompiledLocal)
+#if defined(TCLFLEXARRAY) && (TCLFLEXARRAY + 0) > 0
 	    - sizeof(localPtr->name)
-	    + nameLength + 1);
+#endif
+        + nameLength + 1);
     localPtr->nextPtr = NULL;
     localPtr->nameLength = nameLength;
     localPtr->defValuePtr = NULL;
