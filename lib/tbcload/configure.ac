@@ -5,7 +5,7 @@ dnl	to configure the system for the local environment.
 #
 AC_REVISION($Id: configure.in,v 1.17 2005/03/18 01:56:23 hobbs Exp $)
 
-AC_INIT([tbcload], [1.7])
+AC_INIT([tbcload],[1.7])
 
 TEA_INIT([3.9])
 
@@ -147,6 +147,7 @@ TEA_PROG_TCLSH
 # which require substituting th AC variables in.  Include these here.
 #--------------------------------------------------------------------
 
-AC_OUTPUT([Makefile])
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
 
 #--------------------------------------------------------------------
