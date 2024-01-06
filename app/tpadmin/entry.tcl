@@ -68,7 +68,7 @@ if 0 {
 
     # Load parser. This checks the license.
     if {[catch {
-	package require parser
+	package require tclparser
 	tdk_license user-name
     } err]} {
 	# Parser package missing, we cannot work.

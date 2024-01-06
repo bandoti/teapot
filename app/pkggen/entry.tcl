@@ -62,7 +62,7 @@ foreach d $auto_path {
 }
 
 # Load compiler (for -compile feature)
-package require compiler
+package require tclcompiler
 
 # ### ######### ###########################
 
